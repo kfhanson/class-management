@@ -16,10 +16,27 @@ class Employee extends Model
     }
 
     protected $table = 'employees';
-    protected $fillable = ['name', 'email', 'pin_code'];
-    protected $hidden = ['pin_code', 'remember_token'];
+
+    protected $fillable = [
+        'name',
+        'email',
+        'pin_code',
+    ];
+
+    protected $hidden = [
+        'pin_code',
+        'remember_token',
+    ];
 
     public function check(){
         return $this->hasMany(Check::class);
+    }
+
+    public function attendance(){
+        return $this->hasMany(Attendance::class);
+    }
+
+    public function schedules(){
+        return $this->belongsToMany(Schedule::class, 'schedule_employees', 'emp_id', 'schedule_id');
     }
 }
