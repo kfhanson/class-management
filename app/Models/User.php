@@ -12,43 +12,12 @@ use PDO;
 class User extends Authenticatable
 {
     use Notifiable;
-    // /**
-    //  * The attributes that are mass assignable.
-    //  *
-    //  * @var array<int, string>
-    //  */
-    // protected $fillable = [
-    //     'name',
-    //     'email',
-    //     'password',
-    // ];
 
-    // /**
-    //  * The attributes that should be hidden for serialization.
-    //  *
-    //  * @var array<int, string>
-    //  */
-    // protected $hidden = [
-    //     'password',
-    //     'remember_token',
-    // ];
-
-    // /**
-    //  * The attributes that should be cast.
-    //  *
-    //  * @var array<string, string>
-    //  */
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    // ];
     public function getRouteKeyName()
     {
         return 'name';
     }
 
-    public function roles(){
-        return $this->belongsToMany(Role::class);
-    }
 
     public function hasAnyRole($roles){
         if(is_array($roles)) {
@@ -71,4 +40,26 @@ class User extends Authenticatable
         }
         return false;
     }
+    
+    public function roles(){
+        return $this->belongsToMany(Role::class);
+    }
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'pin_code',
+    ];
+
+    protected $hidden = [
+        'pin_code',
+        'password',
+        'remember_token',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
 }
