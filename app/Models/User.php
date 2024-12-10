@@ -18,6 +18,10 @@ class User extends Authenticatable
         return 'name';
     }
 
+    public function roles(){
+        return $this->belongsToMany(Role::class, 'role_users', 'user_id', 'role_id');
+    }
+
     public function hasAnyRole($roles){
         if(is_array($roles)) {
             foreach($roles as $role){
@@ -40,9 +44,6 @@ class User extends Authenticatable
         return false;
     }
 
-    public function roles(){
-        return $this->belongsToMany(Role::class, 'role_users', 'user_id', 'role_id');
-    }
 
     protected $fillable = [
         'name',
