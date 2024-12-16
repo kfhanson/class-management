@@ -50,8 +50,59 @@
                     </div>
                     <h5 class="font-16 text-uppercase mt-0 text-white-50">Late <br> Today</h5>
                 </div>
-
+                <h1 class="font-500 float-right">{{$data[2]}} <i class="text-success ml-2"></i></h1>
+                <span class="peity-donut float-left" data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }' data-width="72" data-height="72">{{$data[2]}}/{{count($data)}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-secondary text-white">
+            <div class="card-body">
+                <div class="mb-4">
+                    <div class="float-left mini-stat-img mr-4">
+                        <i class="ti-alarm-clock" style="font-size: 30px"></i>
+                    </div>
+                    <h5 class="font-16 text-uppercase mt-0 text-white-50">On Time <br> Percentage</h5>
+                </div>
+                <h1 class="font-500 float-right">{{$data[3]}}%<i class="text-danger ml-2"></i></h1>
+                <span class="peity-donut float-left" data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }' data-width="72" data-height="72">{{$data[3]}}/{{count($data)}}</span>
             </div>
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-xl-3 col-md-6">
+        <div class="card bg-secondary text-white">
+            <div class="card-body">
+                <div class="mb-4">
+                    <div class="float-left mini-stat-img mr-4">
+                        <i class="ti-panel" style="font-size: 30px"></i>
+                    </div>
+                    <h5 class="font-16 text-uppercase mt-0 text-white-50">Available <br> Schedules</h5>
+                </div>
+                <h1 class="font-500 float-right">{{$data[4]}}</h1>
+                <span class="ti-time float-left" style="font-size: 71px"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-9">
+        <div class="card">
+
+        </div>
+    </div>
+    <div class="col-xl-3">
+        <div class="card">
+
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('script')
+<script src="{{ URL::asset('plugins/chartist/js/chartist.min.js') }}"></script>
+<script src="{{ URL::asset('plugins/chartist/js/chartist-plugin-tooltip.min.js') }}"></script>
+<script src="{{ URL::asset('plugins/peity-chart/jquery.peity.min.js') }}"></script>
+<script src="{{ URL::asset('assets/pages/dashboard.js') }}"></script>
+@endsection

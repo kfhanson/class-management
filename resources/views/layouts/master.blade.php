@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="wrapper">
+        @include('layouts.header')
         <div class="content-page">
             <div class="content">
                 <div class="container-fluid">
