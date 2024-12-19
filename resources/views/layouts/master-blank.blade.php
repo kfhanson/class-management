@@ -7,10 +7,9 @@
     <title>Attendance Management System</title>
     @include('layouts.link')
 </head>
-<body class="pb-0" style="background: #2a3142;">
+<body class="pb-0">
     @yield('content')
     @include('layouts.footer-script')
     @include('includes.flash')
-    <script src="{{ URL::asset('assets/js/attendanceFront.js') }}"></script>
 </body>
 </html>
