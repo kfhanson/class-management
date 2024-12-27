@@ -10,14 +10,19 @@
 <body>
     <div id="wrapper">
         @include('layouts.header')
+        @include('layouts.sidebar')
+
         <div class="content-page">
             <div class="content">
                 <div class="container-fluid">
+                    @include('layouts.settings')
                     @yield('content')
                 </div>
             </div>
         </div>
         @include('layouts.footer')
+        @include('layouts.footer-script') 
     </div>
+    @include('includes.flash')
 </body>
 </html>

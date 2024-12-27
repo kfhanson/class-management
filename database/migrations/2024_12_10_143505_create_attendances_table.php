@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('uid')->unsigned()->default(0);
             $table->integer('emp_id')->unsigned();
             $table->boolean('state')->default(0);
-            $table->time('attendance_time')->default(time("H:i:s"));
+            $table->time('attendance_time')->default(date("H:i:s"));
             $table->date('attendance_date')->default(date("Y-m-d"));
             $table->boolean('status')->default(1);
             $table->foreign('emp_id')->references('id')->on('employees')->onDelete('cascade');
