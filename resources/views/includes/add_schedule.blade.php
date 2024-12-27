@@ -28,12 +28,14 @@
                             <input type="time" class="form-control timepicker" id="time_out" name="time_out" required>
                         </div>
                     </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+                        <button type="submit" class="btn btn-success btn-flat"><i class="fa fa-save"></i> Save</button>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-                <button type="submit" class="btn btn-success btn-flat"><i class="fa fa-save"></i> Save</button>
-            </div>
+            
         </div>
     </div>
 </div>
