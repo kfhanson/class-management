@@ -26,7 +26,7 @@ Route::get('/', function () { return view('welcome'); })->name('welcome');
 Route::get('attended/{user_id}', [AttendanceController::class, 'attended'])->name('attended');
 Route::get('attended-before/{user_id}', [AttendanceController::class, 'attendedBefore'])->name('attendedBefore');
 
-Auth::routes(['register' => false, 'reset' => false]);
+// Auth::routes(['register' => false, 'reset' => false]);
 
 Route::group(['middleware' => ['auth', 'Role'], 'roles' => ['admin']], function () {
     // Employees Resource

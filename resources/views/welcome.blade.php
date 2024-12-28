@@ -139,9 +139,9 @@
             <a href="{{ url('/admin') }}">Admin</a>
             @else
             <a class="btn btn-secondary btn-md" style="color: white" href="{{ route('login') }}">Go to Login Panel</a>
-            @if (Route::has('register'))
+            {{-- @if (Route::has('register'))
             <a href="{{ route('register') }}">Register</a>
-            @endif
+            @endif --}}
             @endauth
         </div>
         @endif
