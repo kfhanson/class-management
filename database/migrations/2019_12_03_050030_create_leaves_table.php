@@ -14,7 +14,7 @@ class CreateLeavesTable extends Migration
     public function up()
     {
         Schema::create('leaves', function (Blueprint $table) {
-            $table->Increments('id');
+            $table->increments('id');
             $table->integer('uid')->unsigned()->default(0);
             $table->integer('emp_id')->unsigned();
             $table->boolean('state')->default(0);
@@ -26,7 +26,7 @@ class CreateLeavesTable extends Migration
 
             $table->foreign('emp_id')->references('id')->on('employees')->onDelete('cascade');
 
-           
+
         });
     }
 
@@ -37,7 +37,7 @@ class CreateLeavesTable extends Migration
      */
     public function down()
     {
-        
+
         Schema::table('leaves', function (Blueprint $table) {
          $table->dropForeign(['emp_id']);
         });
